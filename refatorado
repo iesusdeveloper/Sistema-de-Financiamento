@@ -1,0 +1,54 @@
+import time
+print('SISTEMA DE SOLICITAÇÃO DE FINANCIAMENTO!')
+
+def negado():
+    print('Empréstimo NEGADO!')
+    print(f'Motivo: Valor da percela é de R${round((prestacao + (prestacao * juros_mes))):.2f} sendo maior que o valor mínimo')
+def aprovado():
+    print(f'Empréstimo de R${valor_emprestimo:.2f} foi APROVADO!. \n\nOs juros aplicados em cada parcela é de {juros_mes:.2f}% \n\nO valor de cada parcela é de R${prestacao + (prestacao * juros_mes):.2f}.')
+    print("                    **")
+    time.sleep(0.2)
+    print("                     **")
+    time.sleep(0.2)
+    print("                   **")
+    time.sleep(0.2)
+    print("         *          **")
+    time.sleep(0.2)
+    print("       *    *    *****")
+    time.sleep(0.2)
+    print("     *        *  *****")
+    time.sleep(0.2)
+    print("   *            ******")
+    time.sleep(0.2)
+    print(" *                *")
+    time.sleep(0.2)
+    print("***              ************************")
+    time.sleep(0.2)
+    print("  *              *                      *")
+    time.sleep(0.2)
+    print("  *              *       BEM-VINDO      *")
+    time.sleep(0.2)
+    print("  *              *      A CASA É SUA!   *")
+    time.sleep(0.2)
+    print("  *              *                      *")
+    time.sleep(0.2)
+    print("  ***************************************")
+
+
+valor_emprestimo = float(input('Qual o valor da casa? '))
+salario = float(input('Qual é o valor do seu salário? '))
+anos = int(input('Irá pagar em quantos anos? '))
+juros = float(input('Qual o valor dos juros por ano? '))
+prestacao = valor_emprestimo / (anos * 12)
+juros_mes = juros/12
+print('\nAguarde...')
+time.sleep(2)
+print('\nCalculando taxas...')
+time.sleep(1)
+print('\nAnalisando proposta...')
+time.sleep(5)
+if prestacao + (prestacao * juros_mes) <= (salario * 0.3):
+    print(aprovado())
+    
+else:
+    print(negado())
